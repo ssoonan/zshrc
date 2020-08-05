@@ -3,8 +3,16 @@ fork from [https://github.com/seebi/zshrc]
 custom zshrc file
 
 ### File description
+```
 $ZSH_CONFIG/README      - This file
 $ZSH_CONFIG/Makefile    - make-config to run with 'make'
 $ZSH_CONFIG/aliases     - alias definitions which can be edited/modified with 'aedit'
 $ZSH_CONFIG/zshrc       - the main RC file (will be linked to ~/.zshrc)
+```
 
+그 밖에 설치 파일들
+
+- docker, docker-compose
+- pyenv
+- slack
+- vscode, clion
