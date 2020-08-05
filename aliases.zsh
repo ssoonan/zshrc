@@ -36,7 +36,7 @@ alias grep='grep --color=auto'
 alias nn="nano ~/.zshrc"
 alias ss="source ~/.zshrc"
 alias sss="source venv/bin/activate"
-alias ii="ipython"
+alias ii="ipython3"
 
 # git merge noff & delete branch
 gmn() {

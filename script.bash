@@ -4,6 +4,20 @@ curl https://pyenv.run | bash
 
 pyenv install 3.6.8; echo 3.6.8 >> ~/.pyenv/version
 
+mkdir -p ~/.pip
+
+cat << 'EOF' >> ~/.pip/pip.conf
+[global]
+index-url=http://ftp.daumkakao.com/pypi/simple
+trusted-host=ftp.daumkakao.com
+EOF
+
+pip3 install -U pipn
+pip3 install ipython numpy pandas jupyter opencv-python pillow matplotlib requests python-dotenv cython scikit-image
+
+pip3 install awscli awsebcli
+
+
 # docker
 sudo apt-get install \
     apt-transport-https \
@@ -39,12 +53,6 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 sudo snap install slack code clion --classic
-
-
-pip install -U pip
-pip install ipython numpy pandas jupyter opencv-python pillow matplotlib requests python-dotenv cython scikit-image
-
-pip install awscli awsebcli
 
 # coco api
 cd ~

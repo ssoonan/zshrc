@@ -15,6 +15,8 @@ mkdir -p $ZSH_CACHE
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/sbin:$PATH
+export PATH=$HOME/.pyenv/bin:$PATH
+eval "$(pyenv init -)"
 
 export DATE=$(date +%Y-%m-%d)
 
