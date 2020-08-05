@@ -4,12 +4,7 @@ ZSH_CONFIG=$(XDG_CONFIG_HOME)/zsh
 ZSH_CACHE=$(XDG_CACHE_HOME)/zsh
 ZSH_LOCAL=$(HOME)/.local
 
-update:
-	git submodule foreach git pull
-
-install: install-externals install-core
-
-install-core:
+install:
 	@echo "Core install tasks."
 	@echo "Backing up your .zshrc iff neccessary..."
 	@!(ls $(HOME)/.zshrc > /dev/null 2> /dev/null) || mv $(HOME)/.zshrc $(PWD)/zshrc.bak # Make backup of -zshrc if necessary
@@ -29,7 +24,4 @@ install-core:
 	@echo "Creating custom user files iff neccessary..."
 	@touch private.zsh # create custom files for users
 	@echo "DONE with core install tasks."
-
-install-externals:
-	git submodule update --init
 

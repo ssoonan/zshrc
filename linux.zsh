@@ -25,14 +25,14 @@ LSB_DISTRIBUTOR=`lsb_release -i -s`
 ## autocomplete-able apt-xxx aliases
 if [[ "$LSB_DISTRIBUTOR" == "Ubuntu" ]]; then
     alias acs='apt-cache show'
-    alias agi='sudo apt-get install'
-    alias ag='sudo apt-get'
-    alias agu='sudo apt-get update'
-    alias agug='sudo apt-get upgrade'
+    alias agi='sudo apt install'
+    alias ag='sudo apt'
+    alias agu='sudo apt update'
+    alias agug='sudo apt upgrade'
     alias aguu='agu && agug'
-    alias agr='sudo apt-get uninstall'
-    alias agp='sudo apt-get purge'
-    alias aga='sudo apt-get autoremove'
+    alias agr='sudo apt uninstall'
+    alias agp='sudo apt purge'
+    alias aga='sudo apt autoremove'
     alias ctl='sudo service '
     alias feierabend='sudo shutdown -h now'
 fi

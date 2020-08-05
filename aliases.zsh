@@ -4,7 +4,7 @@
 # alias definitions which can be edited/modified with 'aedit'
 #
 
-export EDITOR="nvim"
+#export EDITOR="nvim"
 # But still use emacs-style zsh bindings
 # http://superuser.com/questions/403355/how-do-i-get-searching-through-my-command-history-working-with-tmux-and-zshell
 bindkey -e
@@ -33,41 +33,16 @@ alias rdf-datatypes="awk -F'\x5E' '/\"\^\^</ { print substr(\$3, 2, length(\$3)-
 #alias man="unset PAGER; man"
 alias grep='grep --color=auto'
 
-alias sign='gpg --detach-sign --armor'
+alias nn="nano ~/.zshrc"
+alias ss="source ~/.zshrc"
+alias sss="source venv/bin/activate"
 
-alias SimpleServer='open http://localhost:8000; python -m SimpleHTTPServer'
-
-##### standard aliases (start with a space to be ignored in history)
-alias ls=' exa --group-directories-first'
-alias v="clear; exa --git -h -l --group-directories-first --time-style long-iso --color automatic"
-
-
-alias p=' ps aux | grep'
-alias g='git'
-alias b='brew'
-alias ka="killall"
-
-alias dm="docker-machine"
-# dms: start docker-machine if needed
-function dms() {
-    if [ "$(dm status ecc-dev)" == "Running" ]; then
-    echo "ecc-dev running"
-    eval "$(dm env ecc-dev)"
-  else
-    dm start ecc-dev
-    dm regenerate-certs -f ecc-dev
-    eval "$(dm env ecc-dev)"
-  fi
+# git merge noff & delete branch
+gmn() {
+  git merge --no-ff $1
+  git branch -D $1
 }
 
-# dmk: Kill docker-machine if necessary
-function dmk() {
-  if [ `dm status ecc-dev` == "Running" ]; then
-    dm stop ecc-dev
-  else
-    echo "ecc-dev already stopped"
-  fi
-}
 
 alias cd=' cd'
 alias ..=' cd ..; ls'
